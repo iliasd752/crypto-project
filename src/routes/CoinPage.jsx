@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Sparklines, SparklinesLine } from "react-sparklines";
 
 function CoinPage() {
     const [coin, setCoin] = useState({});
@@ -28,9 +29,9 @@ function CoinPage() {
                     {coin.market_data?.current_price ? (<p>${coin.market_data.current_price.usd.toLocaleString()}</p>) : null}
                     <p>7 Day</p>
                 </div>
-                <div>
-                    Sparkline
-                </div>
+                <Sparklines data={coin.market_data?.sparkline_7d.price}>
+                    <SparklinesLine color='teal' />
+                </Sparklines>
             </div>
         </div>
     </div>
