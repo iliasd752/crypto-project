@@ -8,6 +8,7 @@ import SignUp from "./routes/SignUp";
 import Account from "./routes/Account";
 import axios from "axios";
 import {data} from "autoprefixer";
+import CoinPage from "./routes/CoinPage";
 
 function App() {
     const [coins, setCoins] = useState([]);
@@ -29,6 +30,9 @@ function App() {
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/account' element={<Account />} />
+          <Route path='/coin/:coinId' element={<CoinPage />}>
+            <Route path=':coinId' />
+          </Route>
         </Routes>
     </ThemeProvider>
   );
