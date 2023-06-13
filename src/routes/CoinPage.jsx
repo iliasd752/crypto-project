@@ -33,6 +33,28 @@ function CoinPage() {
                     <SparklinesLine color='teal' />
                 </Sparklines>
             </div>
+            <div>
+                <div>
+                    <p>Market Cap</p>
+                    {coin.market_data?.market_cap ? (<p>${coin.market_data.market_cap.usd.toLocaleString()}</p>) : null}
+                </div>
+                <div>
+                    <p>Volume (24h)</p>
+                    {coin.market_data?.market_cap ? (<p>${coin.market_data.total_volume.usd.toLocaleString()}</p>) : null}
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>24h High</p>
+                    {coin.market_data?.high_24h ? (<p>${coin.market_data.high_24h.usd.toLocaleString()}</p>) : null}
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>24h Low</p>
+                    {coin.market_data?.low_24h ? (<p>${coin.market_data.low_24h.usd.toLocaleString()}</p>) : null}
+                </div>
+            </div>
         </div>
     </div>
     )
