@@ -9,20 +9,20 @@ const CoinItem = ({coin}) => {
     return (
         <tr className='h-[80px] border-b overflow-hidden'>
           <td>
-           
+           <AiOutlineStar />
           </td>
           <td>{coin.market_cap_rank}</td>
           <td>
             <Link to={`/coin/${coin.id}`}>
-              <div className='flex items-center'>
+            <div className='flex items-center'>
                 <img
                   className='w-6 mr-2 rounded-full'
                   src={coin.image}
                   alt={coin.id}
                 />
                 <p className='hidden sm:table-cell'>{coin.name}</p>
-              </div>
-            </Link>
+              </div>  
+            </Link>            
           </td>
           <td>{coin.symbol.toUpperCase()}</td>
           <td>${coin.current_price.toLocaleString()}</td>
